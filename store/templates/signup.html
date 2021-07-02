@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{%load static%}
+
+{%block content%}
+<div class="container">
+    
+    <div class="p-4 m-4 col-lg-5 mx-auto border rounded pt-4 border-dark">
+
+        <h3 class="alert alert-light border rounded border-dark">
+            Create an account
+        </h3>
+
+        <div>
+            <form action="/signup" method="POST">                
+                {% csrf_token %} 
+                {%if error%}
+                <div class="alert alert-danger" role="alert">
+                  {{error}}
+                </div>
+                {%endif%}
+                <!--firstname-->
+                <div class="form-group form-control-lg border-dark" >
+                    <label for="">First Name</label>
+                    <input type="text" name="first" class="form-control" value="{{values.first_name}}" aria-describedby="" >                    
+                </div>
+
+                <!--last name-->
+                <div class="form-group form-control-lg" >
+                    <label for="">Last Name</label>
+                    <input type="text" name="last" class="form-control" value="{{values.last_name}}" aria-describedby="emailHelp" >                   
+                </div>
+
+                <!--phone-->
+
+                <div class="form-group form-control-lg">
+                    <label for="exampleInputPassword1">Phone</label>
+                    <input type="number" class="form-control" name="phone" value="{{values.phone}}" id="exampleInputPassword1" placeholder="">
+                  </div>
+
+
+                <!--email-->
+                <div class="form-group form-control-lg">
+                    <label for="">Email address</label>
+                    <input required type="email" name="email" class="form-control" value="{{values.email}}" id="" aria-describedby="emailHelp" placeholder="abc@gmail.com">
+                    
+                </div>
+
+                <div class="form-group form-control-lg">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="************">
+                  </div>
+
+                  
+                
+                  <div class="formgroup form-control-lg">
+                      <input type='submit' value="Create an account" class = "btn btm-sm btn-info">
+                
+                  </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
