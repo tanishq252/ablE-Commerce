@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path,include
-from .views import home,signup,login,back,cart,checkout,ordersv
+from .views import home,signup,login,back,cart,checkout,ordersv,info
 from .views.login import logout
 from django.conf.urls.static import static
 from .middlewares.auth import auth_middleware
@@ -14,5 +14,6 @@ urlpatterns = [
     path('logout',logout, name = 'logout'),
     path('cart',cart.Cart.as_view(), name = 'cart'),
     path('check-out',checkout.Check.as_view(),name='checkout'),
-    path('orders', auth_middleware(ordersv.OrdersV.as_view()), name='orders')
+    path('orders', auth_middleware(ordersv.OrdersV.as_view()), name='orders'),
+    path('info',info.Inf.as_view(),name='info'),
 ]

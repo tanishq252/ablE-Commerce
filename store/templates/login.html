@@ -3,16 +3,17 @@
 {%load static%}
 
 {%block content%}
+
 <div class="container">
     
     <div class="p-4 m-4 col-lg-5 mx-auto border rounded pt-4 border-primary">
 
-        <h3 class="alert alert-light border rounded border-dark">
+        <h3 class="alert alert-light border rounded border-dark" style="text-align: center;">
             Login
         </h3>
 
         <div class="border-dark">
-            <form action="/login" method="POST" class="border-dark">                
+            <form action="/login" method="POST" class="border-dark" style="align-content: center;">                
                 {% csrf_token %} 
                 {%if error%}
                 <div class="alert alert-danger" role="alert">
@@ -38,7 +39,7 @@
                   
                 
                   <div class="formgroup form-control-lg">
-                      <input type='submit' value="Login" class = "btn btm-sm btn-info">
+                      <input type='submit' value="Login" class = "btn btm-sm btn-info" style="align-self: center;align-content: center;">
                 
                   </div>
 

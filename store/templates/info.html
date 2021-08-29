@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+<!-- {% load cart %} -->
+
+{% block content %}
+
+    <div class="container-fluid mt-5">
+   <div class="text-center" aria-hidden="true">
+     <h1> ABOUT OUR WEBSITE AND OUTCOMES  </h1>
+   </div>
+
+    <div class="container-fluid mt-5">
+       <div class="row mx-auto">
+
+         {% for b in information %}
+      <div class="card mx-auto mb-3" style="width: 25rem;text-align: justify;">
+        <img src="{{b.image.url}}" style="height: 300px;width: 300px;align-self: center;" class="card-img-top" alt="Caption">
+
+          <div class="card-body">
+            <h1 class="card-title">{{b.name}}</h1>
+            <p class="card-text"><b> {{b.information}}</b></p>
+           </div>
+ </div>
+  {% endfor %}
+</div>
+</div>
+</div>
+{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
